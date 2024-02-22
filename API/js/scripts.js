@@ -3,8 +3,11 @@ const url = "https://jsonplaceholder.typicode.com/post"
 const loadingElement = document.querySelector('#loading')
 const postsContainer = document.querySelector('#posts-container')
 
-// get all posts
+// GET id from URL
+const urlSearchParams = document.querySelector("#loading");
+const postId = urlSearchParams.get("id");
 
+// get all posts
 async function getAllPosts() {
     const response = await fetch(url);
 
@@ -19,7 +22,25 @@ async function getAllPosts() {
         const title = document.createElement("h2")
         const body = document.createElement("p")
         const link = document.createElement("a")
-    })
+
+        title.innerText = post.title;
+        body.innerText = post.body;
+
+        // acessando o post individualmente
+        link.innerText = "Ler"
+        link.setAttribute("href", `post.html?id=${post.id}`);
+
+        div.appendChild(title);
+        div.appendChild(body);
+        div.appendChild(link);
+
+        postsContainer(div);
+
+    });
 }
 
-getAllPosts();
+if (!postId) {
+    getAllPosts();
+} else {
+    console.log(postId);
+}

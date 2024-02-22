@@ -19,7 +19,21 @@ async function getAllPosts() {
         const title = document.createElement("h2")
         const body = document.createElement("p")
         const link = document.createElement("a")
-    })
+
+        title.innerText = post.title;
+        body.innerText = post.body;
+
+        // acessando o post individualmente
+        link.innerText = "Ler"
+        link.setAttribute("href", `post.html?id=${post.id}`);
+
+        div.appendChild(title);
+        div.appendChild(body);
+        div.appendChild(link);
+
+        postsContainer(div);
+
+    });
 }
 
 getAllPosts();

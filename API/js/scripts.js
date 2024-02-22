@@ -3,8 +3,11 @@ const url = "https://jsonplaceholder.typicode.com/post"
 const loadingElement = document.querySelector('#loading')
 const postsContainer = document.querySelector('#posts-container')
 
-// get all posts
+// GET id from URL
+const urlSearchParams = document.querySelector("#loading");
+const postId = urlSearchParams.get("id");
 
+// get all posts
 async function getAllPosts() {
     const response = await fetch(url);
 
@@ -36,4 +39,8 @@ async function getAllPosts() {
     });
 }
 
-getAllPosts();
+if (!postId) {
+    getAllPosts();
+} else {
+    console.log(postId);
+}

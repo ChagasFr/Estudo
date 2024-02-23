@@ -57,13 +57,31 @@ async function getPost(id) {
     loadingElement.classList.add("hide");
     postPage.classList.remove("hide");
 
-    const tilte = document.querySelector("h1");
+    const title = document.querySelector("h1");
     const body = document.querySelector("p");
 
     title.innerText = dataPost.title;
     body.innerText = dataPost.body;
 
     console.log(dataComments);
+
+    dataComments.map((comment) => {
+
+    });
+
+    function createComment(comment) {
+        const div = document.querySelector("div");
+        const email = document.querySelector("h3");
+        const commentBody = document.querySelector("p");
+    }
+
+    emial.innerText = coment.email;
+    commentBody = comment.body;
+
+    div.appendChild(email);
+    div.appendChild(commentBody);
+
+    commentsContainer.appendChild(div);
 }
 
 if (!postId) {

@@ -3,6 +3,10 @@ const url = "https://jsonplaceholder.typicode.com/post"
 const loadingElement = document.querySelector('#loading')
 const postsContainer = document.querySelector('#posts-container')
 
+const postPage = document.querySelector("#post");
+const postContainer = document.querySelector("#post-container");
+const commentContainer = document.querySelector("#comments-container");
+
 // GET id from URL
 const urlSearchParams = document.querySelector("#loading");
 const postId = urlSearchParams.get("id");

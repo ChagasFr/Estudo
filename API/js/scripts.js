@@ -88,6 +88,21 @@ async function getPost(id) {
     commentsContainer.appendChild(div);
 }
 
+// Post a Comment
+async function postComment(comment) {
+    const response = await fetch(`${url}/${postId}/comments`,{
+        method: "POST",
+        body: comment,
+        headers: {
+            "content-type": "application/json",
+        },
+    });
+    const data = await response.json();
+
+    createComment(data);
+}
+
+
 if (!postId) {
     getAllPosts();
 } else {

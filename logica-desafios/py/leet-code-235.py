@@ -1,9 +1,13 @@
+# conceitos importantes 
+
 class TreeNode:
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
+#lowestCommonAncestor recebe a raiz de uma árvore binária (root) e dois nós (p e q) e retorna o ancestral comum mais baixo dos nós p e q na árvore
+        
 def lowestCommonAncestor(root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
     if root == p.val or root == q.val:
         return root

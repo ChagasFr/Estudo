@@ -1,5 +1,5 @@
 class TreeNode:
-    def __init__(self, val, left=None, right=None)
+    def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
@@ -9,6 +9,12 @@ def lowestCommonAncestor(root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'Tre
         return root
     
     if (p.val > root.val and q.val < root.val) or (p.val < root.val and q.val > root.val):
+        return root
+    
+    if p.val < root.val:
+        return lowestCommonAncestor(root.left, p, q)
+    else:
+        return lowestCommonAncestor(root.right, p, q)
 
 # Left view of the binary tree
 n3 = TreeNode(3)

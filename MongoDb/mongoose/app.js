@@ -16,6 +16,17 @@ const linkSchema = new mongoose.Schema({
 // modelo 
 const Link = mongoose.model('link', linkSchema)
 
+let link = new Link({
+    title: "chagas",
+    description: "Link para o X",
+    url: "https://twitter.com/Chagao",
+    click: 0,
+})
+
+link.save().then(doc => {
+    console.log(doc)
+}).catch(err => {console.log(err)})
+
 // conexao com o mongo pelo link
 mongoose.connect('mongodb://localhost/newlinks', { useUnifiedTopology: true, useNewUrlParser: true });
 

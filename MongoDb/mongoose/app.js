@@ -5,6 +5,18 @@ const mongoose = require('mongoose')
 const path = require('path')
 const linkRoute = require('./routes/linkRoute')
 
+// modelo de documento
+const linkSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    url: String,
+    click: Number
+})
+
+// modelo 
+const Link = mongoose.model('link', linkSchema)
+
+// conexao com o mongo pelo link
 mongoose.connect('mongodb://localhost/newlinks', { useUnifiedTopology: true, useNewUrlParser: true });
 
 let db = mongoose.connection;

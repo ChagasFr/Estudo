@@ -1,5 +1,7 @@
+// modelo 
 const mongoose = require('mongoose')
 
+// modelo de documento
 const linkSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: String,

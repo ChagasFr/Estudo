@@ -3,8 +3,8 @@ const app = express()
 const port = 3000
 const mongoose = require('mongoose')
 const path = require('path')
-const linkRoute = require('./routes/linkRoute')
 
+const linkRoute = require('./routes/linkRoute')
 const Link = require('./models/Link')
 
 // let link = new Link({

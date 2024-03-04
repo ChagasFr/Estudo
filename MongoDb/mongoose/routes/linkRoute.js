@@ -1,3 +1,4 @@
+const Link = require('./models/Link')
 const express = require('express');
 const router = express.Router()
 var methodOverride = require('method-override')

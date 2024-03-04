@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 const path = require('path')
 const linkRoute = require('./routes/linkRoute')
 
+const Link = require('./models/Link')
+
 // let link = new Link({
 //     title: "chagas",
 //     description: "Link para o X",
@@ -23,16 +25,6 @@ let db = mongoose.connection;
 db.on("error", () => { console.log("houve um erro") });
 db.once("open", () => { console.log("Banco carregado"); })
 
-app.get('/:title', async (req, res) => {
-    let title = req.params.title;
-    try {
-        let doc = await Link.find({ title })
-        res.redirect(doc.url);
-        re.send(doc)
-    } catch (error) {
-        res.send(error);
-    }
-})
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'templates'))

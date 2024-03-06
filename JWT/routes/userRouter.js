@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const UserController = require('../controllers/userController')
 
 // requisicoes POST para registrar e logar
-router.post('register', () => {
-
-})
-router.post('login', () => {
-    
-})
+router.post('/register', userController.register)
+router.post('/login', userController.login)
 
 module.exports = router

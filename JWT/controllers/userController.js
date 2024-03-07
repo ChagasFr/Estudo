@@ -12,7 +12,7 @@ const userController = {
             const savedUser = await user.save()
             res.send(savedUser)
         } catch (err) {
-            res.send(err)
+            res.status(400).send(err)
         }
     },
 

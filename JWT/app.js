@@ -6,7 +6,8 @@ const mongoose = require('mongoose')
 
 mongoose.connect(URL, {userNewUrlParser: true, useUnifiedTopology: true})
 
-app.use('/user', userRouter);
+app.use('/user', express.json(), userRouter);
+
 app.listen(process.env.PORT, () => {
     console.log("Server Running")
 })

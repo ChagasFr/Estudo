@@ -1,7 +1,18 @@
+const User = require('../models/User')
+
 const userController = {
-    register: function (req, res) {
-        console.log('register')
-        res.send('Register')
+    register: async function (req, res) {
+        const user = new User ({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password
+        })
+
+        try {
+            const savedUser = await user.save()
+        } catch (err) {
+            
+        }
     },
 
     login: function (req, res) {

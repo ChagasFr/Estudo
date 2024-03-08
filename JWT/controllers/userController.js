@@ -28,6 +28,9 @@ const userController = {
 
         const token = jwt.sing({ _id: selectedUser._id })
 
+        res.header('authoriztion-token', token)
+        res.send("User Logged")
+
         res.send("user logged")
     },
 }

@@ -26,7 +26,7 @@ const userController = {
         const passwordAndUserMatch = bcrypt.compareSync(req.body.passwor, selectedUser.password)
         if(!passwordAndUserMatch) return res.status(400).send('Email already')
 
-        const token = jwt.sing({ _id: selectedUser._id })
+        const token = jwt.sing({ _id: selectedUser._id, admin: selectedUser.admin })
 
         res.header('authoriztion-token', token)
         res.send("User Logged")

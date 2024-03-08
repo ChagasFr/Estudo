@@ -18,9 +18,7 @@ mongoose.connect(URL,
 
 app.use('/user', express.json(), userRouter);
 
-app.use('/admin', (req, res) => {
-    res.send('Esse dado so deve ser visto pelo admin')
-})
+app.use('/admin')
 
 app.listen(process.env.PORT, () => {
     console.log("Server Running")

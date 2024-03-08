@@ -23,8 +23,10 @@ const userController = {
         const selectedUser = await USer.findOne({email: req.bpdy.email})
         if(selectedUser) return res.status(400).send('Email already')
 
-        const passwordAndUserMatch = bcrypt(req.body.passwor, selectedUser.password)
+        const passwordAndUserMatch = bcrypt.compareSync(req.body.passwor, selectedUser.password)
         if(!passwordAndUserMatch) return res.status(400).send('Email already')
+
+        const token = jwt.sing({ _id: selectedUser._id })
 
         res.send("user logged")
     },

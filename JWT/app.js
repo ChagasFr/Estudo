@@ -18,7 +18,7 @@ mongoose.connect(URL,
 
 app.use('/user', express.json(), userRouter);
 
-app.get('/admin', (req, res) => {
+app.use('/admin', (req, res) => {
     res.send('Esse dado so deve ser visto pelo admin')
 })
 

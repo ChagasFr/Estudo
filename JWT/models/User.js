@@ -3,6 +3,7 @@ const userSchema = mongoose.Schema({
     name: {typr: String, required: true, minlength: 3, maxLength: 50},
     email: {typr: String, required: true, minlength: 3, maxLength: 100},
     passwort: {typr: String, required: true, minlength: 6, maxLength: 10},
+    admin: {type: boolean, default: Date.now},
     createdAt: {type: Date, default: Date.now}
 })
 

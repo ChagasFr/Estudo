@@ -11,7 +11,9 @@ router.get('/', auth, (req, res) => {
     } else {
         res.status(401).send('Acess Denied');
     }
-    
+})
+router.ger('/free', auth, (req, res) => {
+    res.send('Esse dado so deve ser visto por quem está logado')
 })
 
 module.exports = router

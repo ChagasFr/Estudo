@@ -14,5 +14,7 @@ const io = socketIO(server)
 
 // conexao entre front - back
 io.on('connection', (socket) => {
-    console.log();
+    console.log("New connection");
+
+    socket.emit('hello', { msg: "seja bem vindo !" })
 })

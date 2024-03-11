@@ -11,3 +11,8 @@ const server = app.listen(3000, () => {
 })
 
 const io = socketIO(server)
+
+// conexao entre front - back
+io.on('connection', (socket) => {
+    console.log();
+})

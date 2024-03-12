@@ -1,9 +1,24 @@
 const express  = require('express')
 const app  = require('app')
+const socketIO  = require('socket.io')
 const path  = require('path')
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
     console.log("runing")
+})
+
+const messages = []
+
+const io = socketIO(server)
+
+io.on('connection', (socket) => {
+    console.log("new connection")
+
+    socket.on('hello_client_response', (data) => {
+        console.log(data.msg)
+        
+    })
+
 })

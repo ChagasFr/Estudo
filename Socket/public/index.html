@@ -15,9 +15,7 @@
         const socket = io ('http://localhost:3000')
 
         socket.on('hello', (data) => {
-            console.log(data.msg) 
-
-            socket.emit('hello_client_response', { msg: "ok" })
+            console.log(data.msg)
         })
     </script>
 </body>

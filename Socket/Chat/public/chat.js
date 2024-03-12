@@ -1,5 +1,7 @@
 const socket = io("http://localhost:3000")
 
+let user = ''
+
 socket.on('update_messages', (messages) => {
     updateMessagesOnScrean(messages)
 })
@@ -23,5 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.forms['message_form_name'] ['msg'].value = ''
         socket.emit('new_message', { msg: message })
         
+    })
+
+    const userForm = document.querySelector('#user_form_name');
+    userForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = document.forms['user_form_name'] ['user'].value;
     })
 })

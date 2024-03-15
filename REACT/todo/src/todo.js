@@ -11,8 +11,11 @@ function Todo() {
 
     function addItem (event) {
         event.preventDefault();
-        setItems([...items, text])
-        setText("");
+
+        if(text) {
+            setItems([...items, text])
+            setText("");
+        }
     }
 
     return (<div className="container">
@@ -23,7 +26,7 @@ function Todo() {
         </form>
 
         <ul>
-            <li>Item</li>
+            {items.map(item => <li>{item}</li>)} 
         </ul>
     </div>)
 }

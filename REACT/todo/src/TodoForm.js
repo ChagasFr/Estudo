@@ -1,6 +1,4 @@
-import React from "react";
-import './Todo.css'
-import List from "./List";
+import React, {useState} from "react";
 
 function TodoForm(props) {
     const [text, setText] = useState("");

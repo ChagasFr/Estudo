@@ -21,7 +21,15 @@ function Todo() {
     }
 
     function onDone(item) {
-        
+        let updatedItems = items.map(it => {
+            // verificando se o tipo e o valor são iguais
+            if(it.id === item.id) {
+                it.done = !it.done;
+            }
+            return it;
+        })
+
+        setItems(updatedItems);
     }
 
     return (<div className="container">

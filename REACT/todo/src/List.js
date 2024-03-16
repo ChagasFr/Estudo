@@ -10,9 +10,9 @@ function DoneImg(props) {
 
 function List(props) {
     return (<ul>
-        {props.items.map(item => <li>
+        {props.items.map(item => <li className={item.done ? "done" : ""} key={item.id}>
             {item.text}
-            <button onClick={() =>{}}><DoneImg done={}></DoneImg></button>
+            <button onClick={() =>{ props.onDone(item) }}><DoneImg done={item.done}></DoneImg></button>
             <button onClick={() => {props.onItemDeleted(item)}}><img alt="delete" src="../public/assets/bin.jpg"></img></button>
         
         </li>)} 

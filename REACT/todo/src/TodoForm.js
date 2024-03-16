@@ -12,7 +12,7 @@ function TodoForm(props) {
         event.preventDefault();
 
         if(text) {
-            // setItems([...items, text])
+            props.onAddItem(text);
             setText("");
         }
     }

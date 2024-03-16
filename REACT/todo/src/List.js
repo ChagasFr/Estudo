@@ -1,14 +1,10 @@
 import React from "react"
 
-function deleteItem(item) {
-    console.log(item)
-}
-
 function List(props) {
     return (<ul>
-        {props.items.map(item => <li key = {item.id}>
+        {props.items.map(item => <li>
             {item.text}
-            <button onClick={() => {deleteItem(item) }}><img alt="delete" src="./assets/bin/png"></img></button>
+            <button onClick={() => props.onItemDeleted(item)}></button>
         
         </li>)} 
     </ul>)

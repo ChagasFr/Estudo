@@ -11,8 +11,8 @@ function DoneImg(props) {
 
 function List(props) {
     return (<ul>
-        {props.items.map(item => <li className={item.done ? "done item" : "item"} key={item.id}>
-            <Card>
+        {props.items.map(item => <li key={item.id}>
+            <Card className={item.done ? "done item" : "item"}>
                 {item.text}
                 <div>
                     <button onClick={() =>{ props.onDone(item) }}><DoneImg done={item.done}></DoneImg></button>

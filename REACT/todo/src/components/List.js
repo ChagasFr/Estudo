@@ -11,15 +11,7 @@ function DoneImg(props) {
 
 function List(props) {
     return (<ul>
-        {props.items.map(item => <li key={item.id}>
-            <Card className={item.done ? "done item" : "item"}>
-                {item.text}
-                <div>
-                    <button onClick={() =>{ props.onDone(item) }}><DoneImg done={item.done}></DoneImg></button>
-                    <button onClick={() => {props.onItemDeleted(item)}}><img alt="delete" src="../public/assets/bin.jpg"></img></button>
-                </div>
-            </Card>
-        </li>)} 
+        {props.items.map(item =>)} 
     </ul>)
 }
 

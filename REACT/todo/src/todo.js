@@ -46,8 +46,8 @@ function Todo() {
     }
 
     return (<div className="container">
-        <h1>Todo</h1>
-        <TodoForm onAddItem={onAddItem}></TodoForm>
+        <header className="header"><h1>Todo</h1> <button className="addButton">+</button></header> 
+        {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
         <List onDone={onDone} onItemDeleted = {onItemDeleted} items={items}></List>
 
     </div>)

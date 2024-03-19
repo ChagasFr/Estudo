@@ -50,7 +50,7 @@ function Todo() {
         <header className="header"><h1>Todo</h1> <button className="addButton">+</button></header> 
         {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
         <List onDone={onDone} onItemDeleted = {onItemDeleted} items={items}></List>
-        <Modal>Esse é o nosso conteúdo</Modal>
+        <Modal><TodoForm onAddItem={onAddItem}></TodoForm></Modal>
     </div>)
 }
 

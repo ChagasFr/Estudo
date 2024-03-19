@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import Card from "./Card";
 
 function Modal(props) {
-    return (<div className="modal">
+
+    const [show, setShow] = useState(false) 
+    return (<div className= { show ? "modal" : "modal hideModal" }>
         <Card>
             Teste
         </Card>

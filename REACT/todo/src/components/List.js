@@ -3,7 +3,7 @@ import ListItem from "./ListItem";
 
 function List(props) {
     return (<ul>
-        {props.items.map(item => <ListItem item={item} onDone={props.onDone} onItemDeleted={props.onItemDeleted}></ListItem>)} 
+        {props.items.map(item => <ListItem key={item.id} item={item} onDone={props.onDone} onItemDeleted={props.onItemDeleted}></ListItem>)} 
     </ul>)
 }
 

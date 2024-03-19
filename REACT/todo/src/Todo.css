@@ -53,3 +53,8 @@ ul {
   justify-content: center;
   aling-items: center;
 }
+
+.carModal {
+  padding: 20px;
+  background-color: white;
+}

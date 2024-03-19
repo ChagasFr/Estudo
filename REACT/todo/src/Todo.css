@@ -41,3 +41,15 @@ ul {
   color: white;
   border-radius: 25px;
 }
+
+.modal {
+  width: 100px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fided;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  aling-items: center;
+}

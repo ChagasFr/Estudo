@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import List from "./components/List";
 import Item from "./components/Item"
 import TodoForm from "./components/TodoForm";
+import Modal from "./components/Modal";
 import './Todo.css'
 
 const SAVED_ITEMS = "savedItems"
@@ -49,7 +50,7 @@ function Todo() {
         <header className="header"><h1>Todo</h1> <button className="addButton">+</button></header> 
         {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
         <List onDone={onDone} onItemDeleted = {onItemDeleted} items={items}></List>
-
+        <Modal></Modal>
     </div>)
 }
 

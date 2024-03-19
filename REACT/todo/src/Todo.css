@@ -54,6 +54,10 @@ ul {
   aling-items: center;
 }
 
+.hide {
+  display: none;
+}
+
 .carModal {
   padding: 20px;
   background-color: white;

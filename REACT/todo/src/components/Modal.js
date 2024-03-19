@@ -3,8 +3,7 @@ import Card from "./Card";
 
 function Modal(props) {
 
-    const [show, setShow] = useState(false) 
-    return (<div className= { show ? "modal" : "modal hideModal" }>
+    return (<div id="modal" onClick={hideModal} className= { show ? "modal" : "modal hide" }>
         <Card>
             Teste
         </Card>

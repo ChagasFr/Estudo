@@ -27,6 +27,7 @@ function Todo() {
         let item = new Item(text);
 
         setItems([...item, item])
+        onHideModal();
     }
 
     function onItemDeleted(item) {
@@ -47,16 +48,12 @@ function Todo() {
         setItems(updatedItems);
     }
 
-    function onHideModal(e) {
-        let target = e.target;
-        if (target.id == 'modal') {
-            setShowModal(false);
-        }
-        console.log(target)
+    function onHideModal() {
+        setShowModal(false);
     }
 
     return (<div className="container">
-        <header className="header"><h1>Todo</h1> <button className="addButton">+</button></header> 
+        <header className="header"><h1>Todo</h1> <button onClick={ () => {setShowModal(true) }} className="addButton">+</button></header> 
         {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
         <List onDone={onDone} onItemDeleted = {onItemDeleted} items={items}></List>
         <Modal show={showModal} onHideModal = {onHideModal}><TodoForm onAddItem={onAddItem}></TodoForm></Modal>

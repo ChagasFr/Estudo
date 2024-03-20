@@ -12,7 +12,9 @@ let posts = [
     },
 ]
 
-app.get("./all", (req, res) => {});
+app.get("./all", (req, res) => {
+    res.json(JSON.stringify(posts))
+});
 
 app.post("./new", (req, res) => {});
 

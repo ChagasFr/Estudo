@@ -11,7 +11,7 @@ module.exports = {
         return this.posts;
     }
 
-    newPosts(title, description) {
+    newPost(title, description) {
         this.posts.push({ id: generateID(), title, description });
     }
 }

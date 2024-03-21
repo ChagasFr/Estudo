@@ -16,8 +16,15 @@ app.get("./all", (req, res) => {
     res.json(JSON.stringify(posts))
 });
 
-app.post("./new", (req, res) => {});
+app.post("./new", bodyParser.json(), (req, res) => {
+    let title = req.body.title;
+    let description = req.body.description;
+});
 
 app.listen(PORT, () => {
     console.log("Server running on port", PORT)
 })
+
+function generateID() {
+    return Math.random().toString()
+}

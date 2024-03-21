@@ -4,14 +4,6 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-let posts = [
-    {
-        id: "kaldjhalkjhdslkjas",
-        title: "Teste do mural",
-        description: "Descricao"
-    },
-]
-
 app.get("./all", (req, res) => {
     res.json(JSON.stringify(posts))
 });

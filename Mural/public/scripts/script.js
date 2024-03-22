@@ -1,0 +1,8 @@
+
+function updatePosts() {
+
+}
+
+function newPost() {
+    
+}

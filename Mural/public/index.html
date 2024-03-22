@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="id=edge">
-    <title>Teste</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Meu Mural</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h3>Novo Post</h3>
+        <div>
+            <input id="title" placeholder="Titulo">
+            <input id="desc" placeholder="Descricao">
+            <button onClick="newPost()">Salvar</button>
+        </div>
+
+        <h2 class="mt-4">Mural</h2>
+        <div id="posts">
+            <div id="askjdhaksjdhas" class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">Title</h5>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">Descricao</div>
+                </div>
+                
+            <div id="askjdhaksjdhas" class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">Title</h5>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">Descricao</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

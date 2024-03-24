@@ -28,5 +28,12 @@ function updatePosts() {
 
 function newPost() {
     let title = document.querySelectorById("title").value;
-    let description
+    let description = document.getElementById("desc").value;
+
+    let post = { title, description };
+
+    const options = {
+        method: "POST",
+    }
+    fetch("http://localhost:3000/api/new", option)
 }

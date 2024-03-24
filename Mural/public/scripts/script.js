@@ -21,9 +21,12 @@ function updatePosts() {
                 </div> `
             postElements += postElement;
         })
+
+        document.getElementById("post").innerHTML = postElement;
     })
 }
 
 function newPost() {
-
+    let title = document.querySelectorById("title").value;
+    let description
 }

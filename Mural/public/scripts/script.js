@@ -34,6 +34,9 @@ function newPost() {
 
     const options = {
         method: "POST",
+        headers: new Headers({ 'content-type' : 'application/json' })
     }
-    fetch("http://localhost:3000/api/new", option)
+    fetch("http://localhost:3000/api/new", options). (res => {
+        
+    })
 }

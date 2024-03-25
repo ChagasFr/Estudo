@@ -9,7 +9,11 @@ let user = {
 }
 
 app.get("/", (req, res) => {
-
+    fs.readFile('./templates/user.html', 'utf8', (err, data) => {
+        if(!err) {
+            res
+        }
+    })
 })
 
 app.listen(3000, () => {

@@ -1,27 +1,17 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path')
 const app = express();
 
-let user = {
-    id: 0,
-    name: "Chagas",
-    phone: "(11)3214-3545",
+function render(data, obj) {
+
 }
 
-function render(data, obj) {
-    for(let key in obj) {
-        data = data.replace(`{{{ ${key} }}}`)
-    }
-}
+app.set("views", path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-    fs.readFile('./templates/user.html', 'utf8', (err, data) => {
-        if(!err) {
-            data = data.replace("Nome", user.name);
-
-            res.send(data);
-        }
-    })
+    res.render('user')
 })
 
 app.listen(3000, () => {

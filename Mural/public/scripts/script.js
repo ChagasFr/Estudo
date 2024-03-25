@@ -36,7 +36,8 @@ function newPost() {
         method: "POST",
         headers: new Headers({ 'content-type' : 'application/json' })
     }
-    fetch("http://localhost:3000/api/new", options). (res => {
-        
+    fetch("http://localhost:3000/api/new", options).then (res => {
+        let title = document.querySelectorById("title").value = "";
+        let description = document.getElementById("desc").value = "";
     })
 }

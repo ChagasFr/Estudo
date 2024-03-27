@@ -4,6 +4,19 @@ const path = require('path')
 const app = express();
 
 let user = {
+    id: 0,
+    name: "Felipe",
+    phone: "(11) 9321938",
+
+    id: 1,
+    name: "Felipe",
+    phone: "(11) 9321938",
+
+    id: 2,
+    name: "Felipe",
+    phone: "(11) 9321938",
+
+    id: 3,
     name: "Felipe",
     phone: "(11) 9321938"
 }

@@ -4,14 +4,15 @@ const path = require('path')
 const app = express();
 
 let user = {
-    name: "Felipe Chagas"
+    name: "Felipe",
+    phone: "(11) 9321938"
 }
 
 app.set("views", path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-    res.render('user', {name: "Felipe Chagas", phone: "(11) 321-302"} )
+    res.render('user', user );
 })
 
 app.listen(3000, () => {

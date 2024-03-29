@@ -12,6 +12,8 @@ const storage = firebase.storage();
 
 const ref = storage.ref();
 
-ref.listAll().then(res => {
-    
+ref.getDownLoadURL().then(url => { console.log(url) })
+
+ref.listAll().then(res => { 
+    console.log(res) 
 })

@@ -12,3 +12,6 @@ const storage = firebase.storage();
 
 const ref = storage.ref();
 
+ref.listAll().then(res => {
+    
+})

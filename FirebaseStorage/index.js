@@ -14,6 +14,6 @@ const ref = storage.ref();
 
 ref.getDownLoadURL().then(url => { console.log(url) })
 
-ref.listAll().then(res => { 
-    console.log(res) 
-})
+// ref.listAll().then(res => { 
+//     console.log(res) 
+// })

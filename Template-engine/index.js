@@ -25,7 +25,7 @@ app.set("views", path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-    res.render('user', user );
+    res.render('user', { user } );
 })
 
 app.listen(3000, () => {

@@ -12,12 +12,19 @@ const storage = firebase.storage();
 
 const ref = storage.ref("/Images");
 
-// pegando arquivo pelo input
-const fileInput = document.getElementById("fileInput")
+const filebase64 = '/9j/4AAQDJKADSKDSAD/4gKgDSADUWADJNAN'
 
-fileInput.addEventListener("change", (e) => {
-    const file = e.target.files[0]
-    ref.put(file).then((snapshot) => {
-        console.log(snapshot);
-    })
-})
+ref.child("Foto.jpg").putString(filebase64, "base64").then((snapshot) => {
+    console.log(snapshot);
+}) 
+
+// pegando arquivo pelo input
+// const fileInput = document.getElementById("fileInput")
+
+// fileInput.addEventListener("change", (e) => {
+
+//     const file = e.target.files[0]
+//     ref.child(file.name).put(file).then((snapshot) => {
+//         console.log(snapshot);
+//     })
+// })

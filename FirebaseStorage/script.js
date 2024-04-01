@@ -10,10 +10,14 @@ const firebaseConfig = {
 firebaseConfig.initializeApp(firebaseConfig);
 const storage = firebase.storage();
 
-const ref = storage.ref();
+const ref = storage.ref("/Images");
 
-ref.getDownLoadURL().then(url => { console.log(url) })
+// pegando arquivo pelo input
+const fileInput = document.getElementById("fileInput")
 
-// ref.listAll().then(res => { 
-//     console.log(res) 
-// })
+fileInput.addEventListener("change", (e) => {
+    const file = e.target.files[0]
+    ref.put(file).then((snapshot) => {
+        console.log(snapshot);
+    })
+})

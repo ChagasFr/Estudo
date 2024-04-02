@@ -12,11 +12,22 @@ const storage = firebase.storage();
 
 const ref = storage.ref("/Images");
 
-const filebase64 = '/9j/4AAQDJKADSKDSAD/4gKgDSADUWADJNAN'
+const newMetaData = { 
+    contentType: 'image/jpeg'
+}
 
-ref.child("Foto.jpg").putString(filebase64, "base64").then((snapshot) => {
-    console.log(snapshot);
-}) 
+ref.child("Foto.jpg").updateMetadata().then(metaData => {
+    console.log(metaData)
+}).catch(err => {
+    console.log(err)
+})
+
+
+// const filebase64 = '/9j/4AAQDJKADSKDSAD/4gKgDSADUWADJNAN'
+
+// ref.child("Foto.jpg").putString(filebase64, "base64").then((snapshot) => {
+//     console.log(snapshot);
+// }) 
 
 // pegando arquivo pelo input
 // const fileInput = document.getElementById("fileInput")

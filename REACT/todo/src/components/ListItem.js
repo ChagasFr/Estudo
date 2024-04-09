@@ -1,7 +1,7 @@
 import React from "react"
 import Card from "./Card"
 import { useDispatch } from 'react-redux'
-import { deleteItem, changeDone } from '../actions'
+import { deleteItem, changeDone } from '../actions/listAction'
 
 function DoneImg(props) {
     if(props.done) {

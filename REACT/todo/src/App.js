@@ -16,18 +16,18 @@ const SAVED_ITEMS = "savedItems"
 function App() {
     
     const [showModal] = useState(false);
-    // const [items, setItems] = useState([]);
+    // // const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS))
-        if (savedItems) {
-            setItems(savedItems);
-        }
-    }, [])
+    // useEffect(() => {
+    //     let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS))
+    //     if (savedItems) {
+    //         setItems(savedItems);
+    //     }
+    // }, [])
 
-    useEffect(() => {
-        localStorage.setItem(SAVED_ITEMS, JSON.stringify(items))
-    }, [items])
+    // useEffect(() => {
+    //     localStorage.setItem(SAVED_ITEMS, JSON.stringify(items))
+    // }, [items])
 
     // function onAddItem(text) {
     //     let item = new Item(text);
@@ -62,7 +62,7 @@ function App() {
         <Provider store={store}>
             <header className="header"><h1>Todo</h1> <button onClick={ () => {setShowModal(true) }} className="addButton">+</button></header> 
             {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
-            <List onDone={onDone}></List>
+            <List></List>
             <Modal show={showModal} onHideModal = {onHideModal}><TodoForm></TodoForm></Modal>
         </Provider>
     </div>)

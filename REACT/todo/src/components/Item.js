@@ -1,7 +1,10 @@
 class Item {
+    static lastId = 0
+
     constructor (text) {
         this.id =
         this.text = text
+        this.done = false;
     }
 }
 

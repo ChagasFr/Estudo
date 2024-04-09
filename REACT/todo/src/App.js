@@ -23,7 +23,7 @@ function App() {
         localStorage.setItem(SAVED_ITEMS, JSON.stringify(items))
     }, [items])
 
-    function onAddItem(item) {
+    function onAddItem(text) {
         let item = new Item(text);
 
         setItems([...item, item])

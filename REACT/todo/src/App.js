@@ -5,6 +5,12 @@ import TodoForm from "./components/TodoForm";
 import Modal from "./components/Modal";
 import './Todo.css'
 
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import listReducer from "./reducers/listReducer";
+
+const store = createStore(listReducer)
+
 const SAVED_ITEMS = "savedItems"
 
 function App() {

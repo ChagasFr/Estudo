@@ -16,7 +16,7 @@ const SAVED_ITEMS = "savedItems"
 function App() {
     
     const [showModal] = useState(false);
-    const [items, setItems] = useState([]);
+    // const [items, setItems] = useState([]);
 
     useEffect(() => {
         let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS))
@@ -29,40 +29,42 @@ function App() {
         localStorage.setItem(SAVED_ITEMS, JSON.stringify(items))
     }, [items])
 
-    function onAddItem(text) {
-        let item = new Item(text);
+    // function onAddItem(text) {
+    //     let item = new Item(text);
 
-        setItems([...item, item])
-        onHideModal();
-    }
+    //     setItems([...item, item])
+    //     onHideModal();
+    // }
 
-    function onItemDeleted(item) {
-        let filteredItems = items.filter(it => it.id !== item.id)
+    // function onItemDeleted(item) {
+    //     let filteredItems = items.filter(it => it.id !== item.id)
 
-        setItems(filteredItems)
-    }
+    //     setItems(filteredItems)
+    // }
 
-    function onDone(item) {
-        let updatedItems = items.map(it => {
-            // verificando se o tipo e o valor são iguais
-            if(it.id === item.id) {
-                it.done = !it.done;
-            }
-            return it;
-        })
+    // function onDone(item) {
+    //     let updatedItems = items.map(it => {
+    //         // verificando se o tipo e o valor são iguais
+    //         if(it.id === item.id) {
+    //             it.done = !it.done;
+    //         }
+    //         return it;
+    //     })
 
-        setItems(updatedItems);
-    }
+    //     setItems(updatedItems);
+    // }
 
     function onHideModal() {
         setShowModal(false);
     }
 
     return (<div className="container">
-        <header className="header"><h1>Todo</h1> <button onClick={ () => {setShowModal(true) }} className="addButton">+</button></header> 
-        {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
-        <List onDone={onDone} onItemDeleted = {onItemDeleted} items={items}></List>
-        <Modal show={showModal} onHideModal = {onHideModal}><TodoForm onAddItem={onAddItem}></TodoForm></Modal>
+        <Provider store={store}>
+            <header className="header"><h1>Todo</h1> <button onClick={ () => {setShowModal(true) }} className="addButton">+</button></header> 
+            {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
+            <List onDone={onDone}></List>
+            <Modal show={showModal} onHideModal = {onHideModal}><TodoForm></TodoForm></Modal>
+        </Provider>
     </div>)
 }
 

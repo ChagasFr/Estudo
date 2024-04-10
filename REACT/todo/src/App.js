@@ -63,7 +63,7 @@ function App() {
             <header className="header"><h1>Todo</h1> <button onClick={ () => {setShowModal(true) }} className="addButton">+</button></header> 
             {/* <TodoForm onAddItem={onAddItem}></TodoForm> */}
             <List></List>
-            <Modal show={showModal} onHideModal = {onHideModal}><TodoForm></TodoForm></Modal>
+            <Modal show={showModal} onHideModal = {onHideModal}><TodoForm onHideModal = {onHideModal}></TodoForm></Modal>
         </Provider>
     </div>)
 }

@@ -11,12 +11,13 @@ function TodoForm(props) {
         setText(t);
     }
 
-    function addItem (event) {
+    function addItemEvent(event) {
         event.preventDefault();
 
         if(text) {
            dispatch(addItem());
             setText("");
+            props.onHideModal()
         }
     }
 

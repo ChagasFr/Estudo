@@ -20,9 +20,13 @@ function loadState() {
     if(actualState)
         return JSON.parse(actualState)
     else 
-        return
+        return []
 }
-const store = createStore(listReducer)
+const store = createStore(listReducer, loadState())
+
+store.subscribe(() => {
+    persistStage(store.getState())
+})
 
 function App() {
     

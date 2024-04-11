@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import List from "./components/List";
-import Item from "./components/Item"
 import TodoForm from "./components/TodoForm";
 import Modal from "./components/Modal";
 import './Todo.css'

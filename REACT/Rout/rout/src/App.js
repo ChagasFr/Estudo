@@ -6,30 +6,33 @@ import Home from './components/Home'
 import Aulas from './components/Aulas'
 import Sobre from './components/Sobre'
 
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Route, Switch } from 'react-router-dom'
 
 function App () {
   return (
-    <Router>
+    <Route>
       <div className="App">
-      <Router>
         <Nav/> 
-      </Router>
+        <Switch>
+          <Route exact path="/">
+            <Home/> 
+          </Route>
 
-      <Router>
-        <Home/> 
-      </Router>
+          <Route path="/aulas/a">
+            <div className="page">Conteudo</div>
+          </Route>
 
-      <Router>
-        <Aulas/> 
-      </Router>
-      
-      <Router>
-        <Sobre/> 
-      </Router>
+          <Route path="/aulas">
+            <Aulas/> 
+          </Route>
 
+          <Route path="/sobre">
+            <Sobre/> 
+          </Route>
+
+        </Switch>
       </div>
-    </Router>
+    </Route>
   );
 }
 

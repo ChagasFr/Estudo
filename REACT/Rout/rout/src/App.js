@@ -7,7 +7,7 @@ import Aulas from './components/Aulas'
 import Sobre from './components/Sobre'
 import Aula from './components/Aula'
 
-import { BrowserRouter as Route, Router, Switch } from 'react-router-dom'
+import { BrowserRouter as Route, Switch } from 'react-router-dom'
 
 function App () {
   return (

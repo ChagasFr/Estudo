@@ -14,13 +14,6 @@ function App () {
       <div className="App">
         <Nav/> 
         <Switch>
-          <Route exact path="/">
-            <Home/> 
-          </Route>
-
-          <Route path="/aulas/a">
-            <div className="page">Conteudo</div>
-          </Route>
 
           <Route path="/aulas">
             <Aulas/> 
@@ -28,6 +21,14 @@ function App () {
 
           <Route path="/sobre">
             <Sobre/> 
+          </Route>
+
+          <Route exact path="/">
+            <Home/> 
+          </Route>
+          
+          <Route path="*">
+            <div className="page">Essa rota nao existe</div>
           </Route>
 
         </Switch>

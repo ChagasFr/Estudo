@@ -5,16 +5,40 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import Aulas from './components/Aulas'
 import Sobre from './components/Sobre'
+import Aula from './components/Aula'
+
+import { BrowserRouter as Route, Router, Switch } from 'react-router-dom'
 
 function App () {
   return (
-    <div className="App">
-      <Nav></Nav>
-      <Home></Home>
-      {/* <Aulas> </Aulas> 
-      {/* <Sobre> </Sobre> 
-      */}
-    </div>
+    <Route>
+      <div className="App">
+        <Nav/> 
+        <Switch>
+
+          <Route path="/sobre">
+            <Sobre/> 
+          </Route>
+
+          <Route path="/aulas/:id">
+            <Aula/>
+          </Route>
+
+          <Route path="/aulas">
+            <Aulas/> 
+          </Route>
+
+          <Route exact path="/">
+            <Home/> 
+          </Route>
+          
+          <Route path="*">
+            <div className="page">Essa rota nao existe</div>
+          </Route>
+
+        </Switch>
+      </div>
+    </Route>
   );
 }
 

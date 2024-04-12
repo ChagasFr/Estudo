@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function Sobre(props) {
+export default function Aula(props) {
     return (
         <div className="page">
-            <h1>Olá essa é a pagina Principal</h1>
+            <h1>Title</h1>
+            <h3>Title</h3>
         </div>
     )
 }

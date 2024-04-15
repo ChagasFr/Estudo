@@ -32,10 +32,6 @@ function App () {
             <Home/> 
           </Route>
           
-          <Route path="*">
-            <div className="page">Essa rota nao existe</div>
-          </Route>
-
         </Switch>
       </div>
     </Route>

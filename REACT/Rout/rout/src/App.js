@@ -12,6 +12,9 @@ import loginReducers from './reducers/loginReducers'
 import { BrowserRouter as Route, Switch } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+const store = createStore (loginReducers) 
 
 function App () {
   return (

@@ -5,6 +5,7 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import Aulas from './components/Aulas'
 import Sobre from './components/Sobre'
+import Assistir from './components/Assistir'
 import Aula from './components/Aula'
 
 import { BrowserRouter as Route, Switch } from 'react-router-dom'
@@ -26,6 +27,10 @@ function App () {
 
           <Route path="/aulas">
             <Aulas/> 
+          </Route>
+
+          <Route path="/assistir">
+            <Assistir/> 
           </Route>
 
           <Route exact path="/">

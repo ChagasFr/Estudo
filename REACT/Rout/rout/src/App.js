@@ -13,6 +13,7 @@ import { BrowserRouter as Route, Switch } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import PrivateRoute from './components/privateRoute'
 
 const store = createStore (loginReducers) 
 
@@ -32,9 +33,9 @@ function App () {
               <Aula/>
             </Route>
 
-            <Route path="/aulas">
+            <PrivateRoute path="/aulas">
               <Aulas/> 
-            </Route>
+            </PrivateRoute>
 
             <Route path="/assistir">
               <Assistir/> 

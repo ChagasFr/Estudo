@@ -16,6 +16,14 @@ app.get('/api/videos', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'front/build')))
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'front/build/index.html', function(error) {
+        if(error) {
+            res.status(500).send(error)
+        }
+    }))
+})
+
 app.listen(3000, () => {
     console.log('running')
 })

@@ -2,16 +2,18 @@ import React, { useEffect } from 'react'
 import AuthButton from '../components/authButton'
 
 import { useSelector } from 'react-redux-dom'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 
 export default function Nav(props) {
     const login = useSelector(state => state)
 
     const history = useHistory();
+    const location = useLocation
 
     useEffect(() => {
+        let { from } = location.state || { from:{pathname: '/'} }
         if(login) {
-            history.push('/')
+            history.replace(from)
         }
     }, [login])
 

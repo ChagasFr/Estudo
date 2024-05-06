@@ -1,0 +1,13 @@
+inicio do estudo de mongoDB
+- O MongoDB é um banco de dados NoSQL sem schema. Isso significa que você não especifica uma estrutura para tabelas/bancos de dados como faz em bancos de dados SQL.
+
+- Você sabia que os bancos de dados NoSQL são, na verdade, mais rápidos do que os bancos de dados [relacionais](https://kinsta.com/pt/blog/mongodb-vs-mysql/)? 
+Isso se deve a funcionalidades como indexação, fragmentação e dutos de agregação. O MongoDB também é conhecido por sua rápida execução de consultas.
+
+- Ao contrário do SQL, MongoDB não tem um comando de criação de banco de dados. Ao invés disso, 
+existe uma palavra-chave chamada `use` que muda para um banco de dados especificado. Se o banco de dados não existir, ele irá criar um novo banco de dados, 
+caso contrário, ele irá conectar ao banco de dados existente.
+
+- Você pode digitar `db` para confirmar o banco de dados que você acabou de criar em seu sistema.
+
+- Se você quiser verificar os bancos de dados existentes, digite `show dbs` e ele mostrará todos os bancos de dados do seu sistema
